@@ -1,0 +1,3 @@
+<h1>{{ post.titre }} <span class="small">écrit par {{ post.auteur.nom }}</span></h1>
+<p class="infos">le {{ post.date|date:"DATE_FORMAT" }}</p>
+<div class="contenu">{{ post.description|linebreaks }}</div>

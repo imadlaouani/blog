@@ -1,0 +1,19 @@
+<h1>Mon blog !</h1>
+
+{% for post in posts %}
+    <div class="article">
+    	<h3>{{ post.titre }}</h3>
+    	<p>{{ post.description|truncatewords_html:80 }}</p>
+        <p><a href="#">En savoir plus</a></p>
+    </div>
+
+{% empty %}
+    <p>Aucun post pour le moment.</p>
+
+{% endfor %}
+
+<form  class = "site-form" action = " " method="post" >{% csrf_token %}
+	{{ form.as_p }}
+
+	<button type="submit" >Ajouter</button>
+</form>
